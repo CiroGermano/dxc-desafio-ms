@@ -15,18 +15,14 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class PersonServiceUnitTest {
 
@@ -36,11 +32,6 @@ public class PersonServiceUnitTest {
 
     @Mock
     PersonRepository personRepository;
-
-    @Autowired
-    PersonServiceUnitTest(PersonService personService) {
-        this.personService = personService;
-    }
 
     @Test
     public void createPerson() {

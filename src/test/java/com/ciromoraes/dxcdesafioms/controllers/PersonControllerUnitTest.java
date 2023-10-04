@@ -15,15 +15,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class PersonControllerUnitTest {
 
@@ -33,9 +30,6 @@ public class PersonControllerUnitTest {
 
     @Mock
     PersonService personService;
-
-    @Autowired
-    PersonController controller;
 
     @Test
     public void createPerson() {
