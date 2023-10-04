@@ -1,15 +1,15 @@
 package com.ciromoraes.dxcdesafioms.exceptions;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class JsonMessage {
 
     private String message;
-    private Date timestamp;
+    private LocalDateTime timestamp;
 
     public JsonMessage(String message) {
         this.message = message;
-        this.timestamp = new Date();
+        this.timestamp = LocalDateTime.now();
     }
 
     public String getMessage() {
@@ -20,11 +20,11 @@ public class JsonMessage {
         this.message = message;
     }
 
-    public Date getTimestamp() {
+    public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 }
