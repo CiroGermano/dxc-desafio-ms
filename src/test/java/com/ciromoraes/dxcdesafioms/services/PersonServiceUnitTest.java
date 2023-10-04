@@ -39,7 +39,7 @@ public class PersonServiceUnitTest {
         Person aPerson = new Person(1L, "aNickName", "aFirstName", "aLastName",
                 "aEmail", "aCpf");
         PersonCreateDto personCreateDto = PersonCreateDtoConverter.convertToDto(aPerson);
-        when(personRepository.save(aPerson)).thenReturn(aPerson);
+        when(personRepository.save(Mockito.any(Person.class))).thenReturn(aPerson);
         // act
         Person createdPerson = personService.createPerson(personCreateDto);
         // assert

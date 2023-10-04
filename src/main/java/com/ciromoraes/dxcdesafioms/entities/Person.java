@@ -38,6 +38,7 @@ public class Person {
     }
 
     public Person(Long id, String nickname, String firstName, String lastName, String email, String cpf) {
+        this.id = id;
         this.nickname = nickname;
         this.firstName = firstName;
         this.lastName = lastName;
