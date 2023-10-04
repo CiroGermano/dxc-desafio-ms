@@ -31,24 +31,28 @@ public class PersonController {
     }
 
     @GetMapping
+    @ResponseStatus(HttpStatus.FOUND)
     public List<PersonResponseDto> findAll() {
         List<Person> persons = personService.findAll();
         return PersonResponseDtoConverter.convertToDto(persons);
     }
 
     @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
     public PersonResponseDto findById(@PathVariable long id) {
         Person person = personService.findById(id);
         return PersonResponseDtoConverter.convertToDto(person);
     }
 
     @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public PersonResponseDto update(@PathVariable Long id, @RequestBody PersonUpdateDto personUpdateDto) {
         Person updatedPerson = personService.update(id, personUpdateDto);
         return PersonResponseDtoConverter.convertToDto(updatedPerson);
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public void delete(@PathVariable Long id) {
         personService.delete(id);
     }
