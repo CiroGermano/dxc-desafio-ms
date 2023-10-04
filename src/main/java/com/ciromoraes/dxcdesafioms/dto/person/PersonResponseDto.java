@@ -29,9 +29,19 @@ public class PersonResponseDto {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PersonResponseDto)) return false;
-        PersonResponseDto personResponseDto = (PersonResponseDto) o;
-        return personResponseDto.getId().equals(this.id) && personResponseDto.getCpf().equals(this.cpf);
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PersonResponseDto that = (PersonResponseDto) o;
+
+        if (!id.equals(that.id)) return false;
+        return cpf.equals(that.cpf);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id.hashCode();
+        result = 31 * result + cpf.hashCode();
+        return result;
     }
 
     public Long getId() {

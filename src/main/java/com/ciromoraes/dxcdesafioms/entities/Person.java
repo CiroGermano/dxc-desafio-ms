@@ -46,18 +46,21 @@ public class Person {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        if (!id.equals(person.id)) return false;
+        return cpf.equals(person.cpf);
+    }
+
+    @Override
     public int hashCode() {
         int result = id.hashCode();
         result = 31 * result + cpf.hashCode();
         return result;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == this) return true;
-        if (!(o instanceof Person)) return false;
-        Person person = (Person) o;
-        return person.cpf.equals(this.cpf);
     }
 
     @Override

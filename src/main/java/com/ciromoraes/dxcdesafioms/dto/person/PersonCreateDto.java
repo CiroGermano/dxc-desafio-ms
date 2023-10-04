@@ -16,12 +16,31 @@ public class PersonCreateDto {
 
     public PersonCreateDto() {
     }
+
     public PersonCreateDto(String nickName, String firstName, String lastName, String email, String cpf) {
         this.nickName = nickName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.cpf = cpf;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PersonCreateDto that = (PersonCreateDto) o;
+
+        if (!nickName.equals(that.nickName)) return false;
+        return cpf.equals(that.cpf);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = nickName.hashCode();
+        result = 31 * result + cpf.hashCode();
+        return result;
     }
 
     public String getNickName() {
