@@ -31,21 +31,21 @@ public class PersonController {
     }
 
     @GetMapping
-    @ResponseStatus(HttpStatus.FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public List<PersonResponseDto> findAll() {
         List<Person> persons = personService.findAll();
         return PersonResponseDtoConverter.convertToDto(persons);
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.FOUND)
+    @ResponseStatus(HttpStatus.OK)
     public PersonResponseDto findById(@PathVariable long id) {
         Person person = personService.findById(id);
         return PersonResponseDtoConverter.convertToDto(person);
     }
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     public PersonResponseDto update(@PathVariable Long id, @RequestBody PersonUpdateDto personUpdateDto) {
         Person updatedPerson = personService.update(id, personUpdateDto);
         return PersonResponseDtoConverter.convertToDto(updatedPerson);
