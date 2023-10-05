@@ -89,8 +89,8 @@ public class PersonServiceUnitTest {
                 "modifiedLastName", "aEmail", "aCpf");
         when(personRepository.save(Mockito.any(Person.class))).thenReturn(modifiedPerson);
         PersonUpdateDto personUpdateDto = new PersonUpdateDto();
-        personUpdateDto.setNickName("modifiedNickName");
-        personUpdateDto.setLastName("modifiedFirstName");
+        personUpdateDto.setNickname("modifiedNickName");
+        personUpdateDto.setLastname("modifiedFirstName");
 
         // act
         Person updatedPerson = personService.update(1L, personUpdateDto);
@@ -98,8 +98,8 @@ public class PersonServiceUnitTest {
         // assert
         Assertions.assertNotNull(updatedPerson);
         Assertions.assertTrue(foundedPerson.equals(updatedPerson));
-        Assertions.assertTrue("modifiedFirstName".equals(updatedPerson.getFirstName()));
-        Assertions.assertTrue("modifiedLastName".equals(updatedPerson.getLastName()));
+        Assertions.assertTrue("modifiedFirstName".equals(updatedPerson.getFirstname()));
+        Assertions.assertTrue("modifiedLastName".equals(updatedPerson.getLastname()));
     }
 
     @Test
@@ -134,8 +134,8 @@ public class PersonServiceUnitTest {
     public void throwPersonNotFoundExceptionWhenUpdatePerson() {
         // setup
         PersonUpdateDto personUpdateDto = new PersonUpdateDto();
-        personUpdateDto.setNickName("modifiedNickName");
-        personUpdateDto.setLastName("modifiedFirstName");
+        personUpdateDto.setNickname("modifiedNickName");
+        personUpdateDto.setLastname("modifiedFirstName");
         when(personRepository.findById(any(Long.class))).thenReturn(Optional.empty());
 
         // act

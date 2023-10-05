@@ -2,17 +2,17 @@ package com.ciromoraes.dxcdesafioms.dto.converters;
 
 import com.ciromoraes.dxcdesafioms.dto.person.PersonCreateDto;
 import com.ciromoraes.dxcdesafioms.entities.Person;
-import org.modelmapper.ModelMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PersonCreateDtoConverter {
-    private final static ModelMapper modelMapper = new ModelMapper();
+    private final static ObjectMapper mapper = new ObjectMapper();
 
     public static PersonCreateDto convertToDto(Person person) {
-        return modelMapper.map(person, PersonCreateDto.class);
+        return mapper.convertValue(person, PersonCreateDto.class);
     }
 
     public static Person convertToEntity(PersonCreateDto personCreateDto) {
-        return modelMapper.map(personCreateDto, Person.class);
+        return mapper.convertValue(personCreateDto, Person.class);
     }
 
 }

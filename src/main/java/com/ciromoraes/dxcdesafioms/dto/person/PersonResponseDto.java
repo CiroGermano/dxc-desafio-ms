@@ -1,14 +1,17 @@
 package com.ciromoraes.dxcdesafioms.dto.person;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonResponseDto {
 
     private Long id;
 
-    private String nickName;
+    private String nickname;
 
-    private String firstName;
+    private String firstname;
 
-    private String lastName;
+    private String lastname;
 
     private String email;
 
@@ -17,11 +20,11 @@ public class PersonResponseDto {
     public PersonResponseDto() {
     }
 
-    public PersonResponseDto(Long id, String nickName, String firstName, String lastName, String email, String cpf) {
+    public PersonResponseDto(Long id, String nickname, String firstname, String lastname, String email, String cpf) {
         this.id = id;
-        this.nickName = nickName;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.nickname = nickname;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.cpf = cpf;
     }
@@ -52,28 +55,28 @@ public class PersonResponseDto {
         this.id = id;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {

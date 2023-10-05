@@ -1,14 +1,15 @@
 package com.ciromoraes.dxcdesafioms.dto.person;
 
-import com.ciromoraes.dxcdesafioms.entities.Person;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonCreateDto {
 
-    private String nickName;
+    private String nickname;
 
-    private String firstName;
+    private String firstname;
 
-    private String lastName;
+    private String lastname;
 
     private String email;
 
@@ -17,10 +18,10 @@ public class PersonCreateDto {
     public PersonCreateDto() {
     }
 
-    public PersonCreateDto(String nickName, String firstName, String lastName, String email, String cpf) {
-        this.nickName = nickName;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public PersonCreateDto(String nickname, String firstname, String lastname, String email, String cpf) {
+        this.nickname = nickname;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.cpf = cpf;
     }
@@ -32,39 +33,39 @@ public class PersonCreateDto {
 
         PersonCreateDto that = (PersonCreateDto) o;
 
-        if (!nickName.equals(that.nickName)) return false;
+        if (!nickname.equals(that.nickname)) return false;
         return cpf.equals(that.cpf);
     }
 
     @Override
     public int hashCode() {
-        int result = nickName.hashCode();
+        int result = nickname.hashCode();
         result = 31 * result + cpf.hashCode();
         return result;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {

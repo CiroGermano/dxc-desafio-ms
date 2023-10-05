@@ -97,8 +97,8 @@ public class PersonControllerUnitTest {
 
         // assert
         Assertions.assertNotNull(updatedPerson);
-        Assertions.assertEquals(personAlreadyInDb.getFirstName(), "aFirstName");
-        Assertions.assertEquals(updatedPerson.getFirstName(), "aUpdatedName");
+        Assertions.assertEquals(personAlreadyInDb.getFirstname(), "aFirstName");
+        Assertions.assertEquals(updatedPerson.getFirstname(), "aUpdatedName");
         verify(personController, times(1)).update(1L, personWithUpdatedNameDto);
     }
 

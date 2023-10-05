@@ -15,10 +15,10 @@ public class Person {
     private String nickname;
 
     @Column(name = "PERS_NO_FIRSTNAME", nullable = false)
-    private String firstName;
+    private String firstname;
 
     @Column(name = "PERS_NO_LASTNAME", nullable = false)
-    private String lastName;
+    private String lastname;
 
     @Column(name = "PERS_NO_EMAIL", nullable = false, unique = true)
     private String email;
@@ -29,19 +29,19 @@ public class Person {
     public Person() {
     }
 
-    public Person(String nickname, String firstName, String lastName, String email, String cpf) {
+    public Person(String nickname, String firstname, String lastname, String email, String cpf) {
         this.nickname = nickname;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.cpf = cpf;
     }
 
-    public Person(Long id, String nickname, String firstName, String lastName, String email, String cpf) {
+    public Person(Long id, String nickname, String firstname, String lastname, String email, String cpf) {
         this.id = id;
         this.nickname = nickname;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.cpf = cpf;
     }
@@ -69,8 +69,8 @@ public class Person {
         return "Person{" +
                 "id=" + id +
                 ", nickName='" + nickname + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstname + '\'' +
+                ", lastName='" + lastname + '\'' +
                 ", email='" + email + '\'' +
                 ", cpf='" + cpf + '\'' +
                 '}';
@@ -92,20 +92,20 @@ public class Person {
         this.nickname = nickName;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstName) {
+        this.firstname = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastName) {
+        this.lastname = lastName;
     }
 
     public String getEmail() {

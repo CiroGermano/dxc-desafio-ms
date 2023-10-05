@@ -1,24 +1,27 @@
 package com.ciromoraes.dxcdesafioms.dto.person;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonUpdateDto {
 
-    private String nickName;
+    private String nickname;
 
-    private String firstName;
+    private String firstname;
 
-    private String lastName;
+    private String lastname;
 
     private String email;
 
     public PersonUpdateDto() {
     }
 
-    public PersonUpdateDto(String nickName, String firstName, String lastName, String email) {
-        this.nickName = nickName;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public PersonUpdateDto(String nickname, String firstname, String lastname, String email) {
+        this.nickname = nickname;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
     }
 
@@ -29,43 +32,43 @@ public class PersonUpdateDto {
 
         PersonUpdateDto that = (PersonUpdateDto) o;
 
-        if (!Objects.equals(nickName, that.nickName)) return false;
-        if (!Objects.equals(firstName, that.firstName)) return false;
-        if (!Objects.equals(lastName, that.lastName)) return false;
+        if (!Objects.equals(nickname, that.nickname)) return false;
+        if (!Objects.equals(firstname, that.firstname)) return false;
+        if (!Objects.equals(lastname, that.lastname)) return false;
         return Objects.equals(email, that.email);
     }
 
     @Override
     public int hashCode() {
-        int result = nickName != null ? nickName.hashCode() : 0;
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        int result = nickname != null ? nickname.hashCode() : 0;
+        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getEmail() {
