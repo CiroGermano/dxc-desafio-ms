@@ -8,7 +8,6 @@ Tecnologias Utilizadas
 * H2 Database 2.2.224
 * JUnit Jupiter 4.5.1
 * Mockito 4.5.1
-* Modelmapper 3.1.1
 
 #### Observação
 A nomenclatura dos objetos do banco de dados estão usando como base o padrão do 
