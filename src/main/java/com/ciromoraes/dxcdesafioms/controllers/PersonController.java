@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -25,7 +26,7 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public PersonResponseDto createPerson(@RequestBody PersonCreateDto personCreateDto) {
+    public PersonResponseDto createPerson(@Valid @RequestBody PersonCreateDto personCreateDto) {
         Person createdPerson = personService.createPerson(personCreateDto);
         return PersonResponseDtoConverter.convertToDto(createdPerson);
     }

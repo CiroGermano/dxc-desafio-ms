@@ -2,17 +2,24 @@ package com.ciromoraes.dxcdesafioms.dto.person;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.validation.constraints.NotBlank;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonCreateDto {
 
+    @NotBlank(message = "Nickname is mandatory")
     private String nickname;
 
+    @NotBlank(message = "Firstname is mandatory")
     private String firstname;
 
+    @NotBlank(message = "Lastname is mandatory")
     private String lastname;
 
+    @NotBlank(message = "Email is mandatory")
     private String email;
 
+    @NotBlank(message = "Cpf is mandatory")
     private String cpf;
 
     public PersonCreateDto() {
