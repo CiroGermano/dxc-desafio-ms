@@ -125,11 +125,9 @@ public class PersonServiceUnitTest {
         when(personRepository.findByCpf("aCpf")).thenReturn(Optional.of(person));
 
         // act
-        Throwable throwable = assertThrows(CpfAlreadyExistsException.class,
-                () -> personService.createPerson(personCreateDto));
 
         // assert
-        Assertions.assertEquals(CpfAlreadyExistsException.class, throwable.getClass());
+        assertThrows(CpfAlreadyExistsException.class, () -> personService.createPerson(personCreateDto));
     }
 
     @Test
@@ -141,10 +139,7 @@ public class PersonServiceUnitTest {
         when(personRepository.findById(any(Long.class))).thenReturn(Optional.empty());
 
         // act
-        Throwable throwable = assertThrows(PersonNotFoundException.class,
-                () -> personService.update(1L, personUpdateDto));
 
         // assert
-        Assertions.assertEquals(PersonNotFoundException.class, throwable.getClass());
-    }
+        assertThrows(PersonNotFoundException.class, () -> personService.update(1L, personUpdateDto));    }
 }
